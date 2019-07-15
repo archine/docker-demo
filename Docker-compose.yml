@@ -1,0 +1,18 @@
+version: "3"
+services:
+  demo1:
+    # 指定启动后的容器名
+    container_name: demo1
+    build: ./demo1/ .
+    ports:
+      - "8080:8080"
+  demo2:
+    container_name: demo2
+    build: ./demo2/ .
+    ports:
+      - "8081:8081"
+# 指定默认网段
+networks:
+  default:
+    external:
+      name: liangliang

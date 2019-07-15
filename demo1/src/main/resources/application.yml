@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: demo1
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    url: jdbc:mysql://mysql:3306/demo?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      idle-timeout: 3000
+      maximum-pool-size: 5
+      minimum-idle: 1
+      connection-timeout: 10000
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+swagger:
+  base-package: com.gj.web.api
